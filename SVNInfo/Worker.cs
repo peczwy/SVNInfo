@@ -63,7 +63,18 @@ namespace SVNInfo
                         break;
                     };
             }
-            Console.WriteLine(output);
+            if (Config.OutputFile != null)
+            {
+                if (File.Exists(Config.OutputFile)) 
+                {
+                    File.Delete(Config.OutputFile);
+                }
+                File.WriteAllText(Config.OutputFile, output);
+            }
+            else 
+            {
+                Console.Write(output);
+            }
         }
 
         private SQLiteConnection ObtainConnection() 

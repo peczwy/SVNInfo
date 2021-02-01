@@ -16,7 +16,8 @@ namespace SVNInfo
 -p [path] to set path where .svn resides
 -f [int] to set the number of times that the search of .svn folder should traverse towards the root (default is 0)
 -r to print the revision number
--b to print the branch";
+-b to print the branch
+-o [path] to set the output file";
 
         static void Main(string[] args)
         {

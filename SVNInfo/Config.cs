@@ -16,6 +16,8 @@ namespace SVNInfo
 
         public Mode Mode { get; internal set; }
 
+        public string OutputFile { get; internal set; }
+
         public Config(string[] args) 
         {
             FallbackTraversal = 0;
@@ -62,6 +64,15 @@ namespace SVNInfo
                             if (i < args.Length)
                             {
                                 FallbackTraversal = int.Parse(args[i]);
+                            }
+                            break;
+                        }
+                    case "-o":
+                        {
+                            i++;
+                            if (i < args.Length)
+                            {
+                                OutputFile = args[i];
                             }
                             break;
                         }
